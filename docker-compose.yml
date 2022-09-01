@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  docker-gs-ping:
+    build:
+      context: .
+    container_name: rest-server
+    hostname: rest-server
+    networks: 
+      - gs-ping-network
+    ports:
+      - 8080:8080
+
+networks:
+  gs-ping-network:
+    driver: bridge
